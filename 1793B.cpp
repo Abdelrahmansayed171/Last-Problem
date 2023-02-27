@@ -34,9 +34,9 @@ void Orcawy() {
     int x,timer = 1, last = n-1;
     int arr[n];
     set <int> s;
-    for(int i =0;i <n;i++){
-        arr[i] = -1;
-    }
+   for(int i =0;i <n;i++){
+       arr[i] = -1;
+   }
     for(int i =0;i <m;i++){
         cin >> x;
         int sizee = s.size();
