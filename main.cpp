@@ -1,4 +1,4 @@
-//<a href="https://codeforces.com/contest/368/problem/B"></a>
+//<a href="https://codeforces.com/contest/1793/problem/A"></a>
 
 #include <bits/stdc++.h>
 #include <iostream>
@@ -18,33 +18,43 @@ using namespace std;
 typedef long long          ll;
 //typedef pair<int,int>      pr;
 
-void Orcawy(){
-    int n,m;
-    cin >> n>> m;
-    map<int,bool> map;
-    int arr[n];
-    vector<int> prefix(n+5, 0);
-    for(int i = 0;i < n;i++){
-        cin >> arr[i];
-    }
-    for(int i =n-1;i >=0;i --) {
-        if (map[arr[i]] == false) {
-            prefix[i] += prefix[i + 1] + 1;
-            map[arr[i]] = true;
-        } else {
-            prefix[i] = prefix[i+1];
-        }
-    }
-    int x;
-    while(m--){
-        cin >> x;
-        cout << prefix[x-1] <<endl;
-    }
+
+// Function to return gcd of a and b
+int gcd(int a, int b)
+{
+    if (a == 0)
+        return b;
+    return gcd(b % a, a);
 }
 
 
+void Orcawy(){
+    ll a,b,n,m;
+    cin >> a >> b >> n >> m;
+    ll fd = n/(m+1);
+    ll ans = 0;
+    if(fd*m*a <= ((fd*m)+fd)*b){
+        ans += fd*m*a;
+    }
+    else{
+        ans+= ((fd*m)+fd)*b;
+    }
+    n-= ((fd*m)+fd);
+    if(n*a <= n*b){
+        ans += n*a;
+    }
+    else{
+        ans+= n*b;
+    }
+    cout << ans <<endl;
+}
+
 int main() {
     Orca
-    Orcawy();
+    int t;
+    cin >> t;
+    while(t--){
+        Orcawy();
+    }
     return 0;
 }
