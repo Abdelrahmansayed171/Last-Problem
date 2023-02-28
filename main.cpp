@@ -1,4 +1,8 @@
-//<a href="https://codeforces.com/contest/1799/problem/A"></a>
+//<a https://codeforces.com/contest/148/problem/A "></a>
+///وَأَنْ لَيْسَ لِلْإِنْسَانِ إِلَّا مَا سَعَى
+///وَأَنَّ سَعْيَهُ سَوْفَ يُرَى
+///And that man shall have nothing but what he strives for
+///And that his striving shall soon be seen
 
 #include <bits/stdc++.h>
 #include <iostream>
@@ -29,36 +33,45 @@ typedef long long ll;
 
 
 void Orcawy() {
-    int n,m;
-    cin >> n >>m;
-    int x,timer = 1, last = n-1;
-    int arr[n];
-    set <int> s;
-    for(int i =0;i <n;i++){
-        arr[i] = -1;
-    }
-    for(int i =0;i <m;i++){
-        cin >> x;
-        int sizee = s.size();
-        s.insert(x);
-        if(sizee != s.size()){
-            arr[last] = timer;
-            last--;
-        }
-        timer++;
-    }
-    for(int i =0; i <n;i++){
-        cout << arr[i] << " ";
-    }
-    cout <<endl;
+//    int n,m;
+//    cin >> n >>m;
+//    int x,timer = 1, last = n-1;
+//    int arr[n];
+//    for(int i =0;i <n;i++){
+//        arr[i] = -1;
+//    }
+//    set <int> s;
+//    for(int i =0;i <m;i++){
+//        cin >> x;
+//        int sizee = s.size();
+//        s.insert(x);
+//        if(sizee != s.size()){
+//            arr[last] = timer;
+//            last--;
+//        }
+//        timer++;
+//    }
+//    for(int i =0; i <n;i++){
+//        cout << arr[i] << " ";
+//    }
+//    cout <<endl;
 }
 
 int main() {
     Orca
-    int t;
-    cin >> t;
-    while (t--) {
-        Orcawy();
+//    int t;
+//    cin >> t;
+//    while (t--) {
+//        Orcawy();
+//    }
+    int k,l,m,n,d;
+    cin >> k >> l >> m >> n >>d;
+    int ans = 0;
+    for(int i =1;i <= d;i++){
+        if( i%k == 0 || i%l == 0 || i%m == 0 || i%n == 0){
+            ans++;
+        }
     }
+    cout << ans <<endl;
     return 0;
 }
